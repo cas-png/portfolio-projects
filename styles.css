@@ -192,6 +192,28 @@ h1 {
   margin: 1rem 0 2rem;
 }
 
+.hobby-section {
+  margin: 0 0 2rem;
+}
+
+.hobby-media {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 0.6rem;
+  background: color-mix(in srgb, var(--surface) 40%, transparent);
+  backdrop-filter: blur(4px);
+}
+
+.hobby-media img {
+  width: 100%;
+  height: min(52vw, 420px);
+  object-fit: contain;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--surface) 55%, transparent);
+  display: block;
+}
+
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
