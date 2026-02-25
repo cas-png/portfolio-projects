@@ -1,0 +1,26 @@
+﻿[
+  {
+    "title": "Student Performance Dashboard",
+    "description": "Visualized course outcomes and attendance trends with interactive charts.",
+    "stack": ["Python", "Pandas", "Plotly"],
+    "image": "assets/student-performance-dashboard.jpg",
+    "repo": "https://github.com/your-username/student-dashboard",
+    "demo": ""
+  },
+  {
+    "title": "Task Planner App",
+    "description": "A lightweight planner with deadlines, priorities, and local persistence.",
+    "stack": ["JavaScript", "HTML", "CSS"],
+    "image": "assets/task-planner-app.jpg",
+    "repo": "https://github.com/your-username/task-planner",
+    "demo": ""
+  },
+  {
+    "title": "Weather CLI Tool",
+    "description": "Command-line weather lookup utility built during a side project sprint.",
+    "stack": ["Node.js", "REST API"],
+    "image": "assets/weather-cli-tool.jpg",
+    "repo": "https://github.com/your-username/weather-cli",
+    "demo": ""
+  }
+]
