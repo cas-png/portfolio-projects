@@ -1,4 +1,28 @@
-﻿async function loadProjects() {
+﻿function setupThemeToggle() {
+  const root = document.documentElement;
+  const toggle = document.getElementById("theme-toggle");
+  if (!toggle) {
+    return;
+  }
+
+  const applyTheme = (theme) => {
+    root.setAttribute("data-theme", theme);
+    const isNight = theme === "night";
+    toggle.textContent = isNight ? "Night" : "Day";
+    toggle.setAttribute("aria-label", isNight ? "Switch to day mode" : "Switch to night mode");
+  };
+
+  const current = root.getAttribute("data-theme") || "day";
+  applyTheme(current);
+
+  toggle.addEventListener("click", () => {
+    const nextTheme = root.getAttribute("data-theme") === "night" ? "day" : "night";
+    applyTheme(nextTheme);
+    localStorage.setItem("theme", nextTheme);
+  });
+}
+
+async function loadProjects() {
   const container = document.getElementById("projects");
 
   try {
@@ -213,5 +237,5 @@ function setupImageModal(projectsContainer, projects) {
   });
 }
 
+setupThemeToggle();
 loadProjects();
-

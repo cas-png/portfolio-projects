@@ -1,4 +1,21 @@
 ﻿:root {
+  --bg: #16192e;
+  --surface: #232845;
+  --ink: #eef1ff;
+  --muted: #bcc3e0;
+  --accent: #80a4ff;
+  --accent-2: #a38fff;
+  --border: #3b4268;
+  --bg-grad-1: #2f365f;
+  --bg-grad-2: #3b3161;
+  --card-image-bg: #2d3358;
+  --tag-bg: #2a3053;
+  --image-count-bg: #1c2143d6;
+  --modal-ui-bg: #1a1f3fcc;
+  --cta-hover-bg: #ffffff1a;
+}
+
+:root[data-theme="day"] {
   --bg: #f4f1e8;
   --surface: #fffaf0;
   --ink: #131212;
@@ -6,6 +23,13 @@
   --accent: #0f766e;
   --accent-2: #f97316;
   --border: #dfd8c8;
+  --bg-grad-1: #fff2cf;
+  --bg-grad-2: #d6f5ef;
+  --card-image-bg: #efe6d2;
+  --tag-bg: #ffffffbf;
+  --image-count-bg: #111111c9;
+  --modal-ui-bg: #111111cc;
+  --cta-hover-bg: #ffffff99;
 }
 
 * {
@@ -17,14 +41,29 @@ body {
   font-family: "Space Grotesk", sans-serif;
   color: var(--ink);
   background:
-    radial-gradient(circle at 10% 10%, #fff2cf 0%, transparent 35%),
-    radial-gradient(circle at 90% 20%, #d6f5ef 0%, transparent 35%),
+    radial-gradient(circle at 10% 10%, var(--bg-grad-1) 0%, transparent 40%),
+    radial-gradient(circle at 90% 20%, var(--bg-grad-2) 0%, transparent 40%),
     var(--bg);
   min-height: 100vh;
 }
 
 body.modal-open {
   overflow: hidden;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 0.45rem 0.85rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.8rem;
+  cursor: pointer;
 }
 
 .hero,
@@ -70,7 +109,7 @@ h1 {
 
 .cta:hover {
   transform: translateY(-2px);
-  background: #ffffff99;
+  background: var(--cta-hover-bg);
 }
 
 .section-head h2 {
@@ -105,7 +144,7 @@ h1 {
   aspect-ratio: 16 / 9;
   border-radius: 10px;
   overflow: hidden;
-  background: #efe6d2;
+  background: var(--card-image-bg);
   margin-bottom: 0.85rem;
   border: 0;
   padding: 0;
@@ -128,7 +167,7 @@ h1 {
   position: absolute;
   right: 0.5rem;
   bottom: 0.45rem;
-  background: #111111c9;
+  background: var(--image-count-bg);
   color: #fff;
   font-family: "IBM Plex Mono", monospace;
   font-size: 0.75rem;
@@ -169,7 +208,7 @@ h1 {
   padding: 0.2rem 0.5rem;
   border: 1px solid var(--border);
   border-radius: 999px;
-  background: #ffffffbf;
+  background: var(--tag-bg);
 }
 
 .links {
@@ -219,7 +258,7 @@ h1 {
 .modal-close,
 .modal-nav {
   border: 1px solid #ffffff66;
-  background: #111111cc;
+  background: var(--modal-ui-bg);
   color: #fff;
   width: 2.25rem;
   height: 2.25rem;
@@ -256,7 +295,7 @@ h1 {
   transform: translateX(-50%);
   margin: 0;
   color: #fff;
-  background: #111111cc;
+  background: var(--modal-ui-bg);
   border: 1px solid #ffffff2f;
   border-radius: 999px;
   padding: 0.25rem 0.65rem;
@@ -271,6 +310,11 @@ h1 {
 @media (max-width: 560px) {
   .card {
     padding: 0.75rem;
+  }
+
+  .theme-toggle {
+    top: 0.8rem;
+    right: 0.8rem;
   }
 
   .modal-nav {
