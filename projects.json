@@ -80,5 +80,14 @@
   "image": "assets/PolicyIQ/Highlight.png",
   "repo": "https://github.com/DataShinobiX/BlueRiq",
   "demo": ""
- }
+ },
+ {
+  "title": "Abalone Age Prediction with Neural Networks",
+  "description": "This project predicts the age of abalone specimens using physical features and deep learning. Multiple PyTorch neural network architectures were developed and compared, incorporating techniques such as batch normalization and dropout. Results show that batch normalization significantly improves performance on small tabular datasets, achieving the lowest prediction error.",
+  "stack": ["Python", "PyTorch", "Pandas", "NumPy"],
+  "image": ["assets/AbaloneNN/test_data_cleaned.png",
+            "assets/AbaloneNN/test_data.png"],
+  "repo": "https://github.com/cas-png/Deep-Learning-Abalone/blob/main/torch-deep-learning-regression-approach.ipynb",
+  "demo": ""
+}
 ]
