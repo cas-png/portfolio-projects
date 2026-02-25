@@ -17,7 +17,7 @@
       .map((project, idx) => {
         const galleryImages = normalizeProjectImages(project);
         const hasImage = galleryImages.length > 0;
-        const imageSrc = hasImage ? galleryImages[0] : "assets/placeholder.svg";
+        const imageSrc = hasImage ? galleryImages[0] : "assets/shared/placeholder.svg";
         const imageAlt = `${project.title || "Project"} preview`;
         const extraImages = galleryImages.length > 1
           ? `<span class=\"image-count\">+${galleryImages.length - 1}</span>`
@@ -31,7 +31,7 @@
                 alt=\"${imageAlt}\"
                 loading=\"lazy\"
                 decoding=\"async\"
-                onerror=\"this.onerror=null;this.src='assets/placeholder.svg';this.parentElement.classList.add('is-placeholder');\"
+                onerror=\"this.onerror=null;this.src='assets/shared/placeholder.svg';this.parentElement.classList.add('is-placeholder');\"
               />
               ${extraImages}
             </button>
@@ -39,7 +39,7 @@
           : `
             <div class=\"card-image is-placeholder\">
               <img
-                src=\"assets/placeholder.svg\"
+                src=\"assets/shared/placeholder.svg\"
                 alt=\"No image provided for ${project.title || "project"}\"
                 loading=\"lazy\"
                 decoding=\"async\"
@@ -128,7 +128,7 @@ function setupImageModal(projectsContainer, projects) {
   };
 
   const renderModalImage = () => {
-    const src = state.images[state.index] || "assets/placeholder.svg";
+    const src = state.images[state.index] || "assets/shared/placeholder.svg";
     modalImage.src = src;
     modalImage.alt = `${state.title} (${state.index + 1}/${state.images.length})`;
     modalCounter.textContent = `${state.index + 1} / ${state.images.length}`;
@@ -139,7 +139,7 @@ function setupImageModal(projectsContainer, projects) {
   };
 
   const openModal = (images, startIndex, title) => {
-    state.images = images.length > 0 ? images : ["assets/placeholder.svg"];
+    state.images = images.length > 0 ? images : ["assets/shared/placeholder.svg"];
     state.index = Math.min(Math.max(startIndex, 0), state.images.length - 1);
     state.title = title || "Project image";
     renderModalImage();
@@ -209,8 +209,9 @@ function setupImageModal(projectsContainer, projects) {
   });
 
   modalImage.addEventListener("error", () => {
-    modalImage.src = "assets/placeholder.svg";
+    modalImage.src = "assets/shared/placeholder.svg";
   });
 }
 
 loadProjects();
+

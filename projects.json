@@ -12,7 +12,7 @@
     "title": "Bachelor end project",
     "description": "Made route scheduling software for Milk-Run routes, here when a new job is added to the system the software will check if the it's possible to add the an existing route or driver or it should reschedule it.",
     "stack": ["React", "Laravel", "Docker"],
-    "image": "assets/global-architecture.png",
+    "image": "assets/bachelor-end-project/global-architecture.png",
     "repo": "",
     "repoText": "Repository not public",
     "demo": ""
@@ -21,7 +21,7 @@
     "title": "Imdb Dashboard for directors",
     "description": "This dashboard combines visualization with machine learning and was developed for a TU/e course. It helps directors gain valuable insights into when to release a movie based on its budget and genre. Additionally, it provides general insights into movies and their ratings.",
     "stack": ["Python", "Xgboost", "Dash", "Plotly"],
-    "image": "assets/visualanalytics.png",
+    "image": "assets/imdb-dashboard/visualanalytics.png",
     "repo": "https://github.com/cas-png/2AMV10-Visual-Analytics",
     "demo": ""
   },
@@ -29,7 +29,7 @@
     "title": "Visualization course dashboard",
     "description": "This TU/e course dashboard helps coastal safety authorities analyze Australian shark incidents (1791–2024). It combines an interactive map, timeline, and filters with linked charts to identify hotspots, compare injury severity by shark species, and explore relationships between context, victim behavior, and outcomes.",
     "stack": ["Python", "Dash", "Plotly"],
-    "image": "assets/VisualizationSharkData.png",
+    "image": "assets/visualization-course-dashboard/VisualizationSharkData.png",
     "repo": "https://github.com/cas-png/dashframework-main",
     "demo": ""
   },
@@ -37,7 +37,7 @@
     "title": "Aircraft RUL Prediction & Maintenance Optimization",
     "description": "This TU/e course project predicts aircraft engine Remaining Useful Lifetime (RUL) using a Random Forest model with engineered time-based features, and optimizes maintenance scheduling with a Genetic Algorithm. The approach combines data preprocessing, feature engineering, and hyperparameter tuning with DEAP and Optuna to minimize maintenance penalties under operational constraints.",
     "stack": ["Python", "Pandas", "NumPy", "Scikit-learn", "DEAP", "Optuna"],
-    "image": "assets/RUL_optimization.png",
+    "image": "assets/aircraft-rul-optimization/RUL_optimization.png",
     "repo": "",
     "demo": ""
   },
@@ -45,7 +45,7 @@
     "title": "Survival analysis of component failures",
     "description": "This project uses log-rank tests (survival analysis) to evaluate whether time-to-failure differs across user conditions. It tests battery, impact, and IR sensor failure times across carpet score groups (pairwise and threshold splits) and across households with vs. without pets, showing strong evidence that pets and lower carpet scores are associated with different failure behavior for battery and impact sensors, while IR is not significantly affected.",
     "stack": ["R"],
-    "image": "assets/FM-All-Pets.png",
+    "image": "assets/survival-analysis/FM-All-Pets.png",
     "repo": "",
     "demo": ""
   },
@@ -54,9 +54,9 @@
     "description": "This project analyzes theater ticket sales and social media performance using batch processing pipelines. It combines Spark-based data engineering with interactive dashboards to explore regional performance, demographic accessibility, and the relationship between weekly marketing engagement and ticket sales, enabling insights into occupancy trends and campaign effectiveness.",
     "stack": ["Python", "Apache Spark", "Google Cloud Storage", "BigQuery", "Looker Studio"],
     "images": [
-      "assets/Batch Pipelines.png",
-      "assets/DashboardDataEngineering.png",
-      "assets/DashboardDataEngineeringVis.png"
+      "assets/ticket-sales-marketing/Batch Pipelines.png",
+      "assets/ticket-sales-marketing/DashboardDataEngineering.png",
+      "assets/ticket-sales-marketing/DashboardDataEngineeringVis.png"
     ],
     "repo": "",
     "demo": ""
@@ -66,9 +66,9 @@
     "description": "This project develops a scalable MLOps system to forecast ticket sales per venue. It combines feature engineering and models like XGBoost and HistGradientBoosting with an automated pipeline for training, evaluation, and deployment. A web-based UI allows non-technical users to visualize historical sales and forecasts, enabling early-stage decision-making and performance monitoring.",
     "stack": ["Python", "XGBoost", "Scikit-learn", "Flask", "Docker", "Google Cloud", "Vertex AI"],
     "images": [
-      "assets/DEUI.PNG",
-      "assets/Forecaster.PNG",
-      "assets/pipelineDE.png"
+      "assets/ticket-sales-forecasting/dashboard-ui.png",
+      "assets/ticket-sales-forecasting/forecaster.png",
+      "assets/ticket-sales-forecasting/pipeline-de.png"
     ],
     "repo": "",
     "demo": ""
