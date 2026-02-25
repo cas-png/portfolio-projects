@@ -89,5 +89,14 @@
             "assets/AbaloneNN/test_data.png"],
   "repo": "https://github.com/cas-png/Deep-Learning-Abalone/blob/main/torch-deep-learning-regression-approach.ipynb",
   "demo": ""
-}
+ },
+ {
+  "title": "Sentiment Analysis of Text Reviews",
+  "description": "This project applies natural language processing techniques to classify text reviews as positive or negative. Multiple feature representations were explored, including Bag-of-Words, TF-IDF, and Word2Vec embeddings (both custom-trained and pre-trained). A Logistic Regression model was used to compare performance across these approaches, highlighting the trade-offs between simple frequency-based methods and more advanced semantic embeddings.",
+  "stack": ["Python", "Pandas", "scikit-learn", "gensim"],
+  "image": ["assets/Sentiment/wordcloud.png",
+            "assets/Sentiment/sentimentanalysis.png"],
+  "repo": "https://github.com/cas-png/machine-learning/blob/main/Team_11_code.ipynb",
+  "demo": ""
+ }
 ]
