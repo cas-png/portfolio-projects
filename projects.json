@@ -14,15 +14,40 @@
     "stack": ["React", "Laravel", "Docker"],
     "image": "assets/global-architecture.png",
     "repo": "",
-    "repoText": "Repository not public (available on request)",
+    "repoText": "Repository not public",
     "demo": ""
   },
   {
-    "title": "Weather CLI Tool",
-    "description": "Command-line weather lookup utility built during a side project sprint.",
-    "stack": ["Node.js", "REST API"],
-    "image": "assets/weather-cli-tool.jpg",
-    "repo": "https://github.com/your-username/weather-cli",
+    "title": "Imdb Dashboard for directors",
+    "description": "This dashboard combines visualization with machine learning and was developed for a TU/e course. It helps directors gain valuable insights into when to release a movie based on its budget and genre. Additionally, it provides general insights into movies and their ratings.",
+    "stack": ["Python", "Xgboost", "Dash", "Plotly"],
+    "image": "assets/visualanalytics.png",
+    "repo": "https://github.com/cas-png/2AMV10-Visual-Analytics",
     "demo": ""
+  },
+  {
+    "title": "Visualization course dashboard",
+    "description": "This TU/e course dashboard helps coastal safety authorities analyze Australian shark incidents (1791–2024). It combines an interactive map, timeline, and filters with linked charts to identify hotspots, compare injury severity by shark species, and explore relationships between context, victim behavior, and outcomes.",
+    "stack": ["Python", "Dash", "Plotly"],
+    "image": "assets/VisualizationSharkData.png",
+    "repo": "https://github.com/cas-png/dashframework-main",
+    "demo": ""
+  },
+  {
+  "title": "Aircraft RUL Prediction & Maintenance Optimization",
+  "description": "This TU/e course project predicts aircraft engine Remaining Useful Lifetime (RUL) using a Random Forest model with engineered time-based features, and optimizes maintenance scheduling with a Genetic Algorithm. The approach combines data preprocessing, feature engineering, and hyperparameter tuning with DEAP and Optuna to minimize maintenance penalties under operational constraints.",
+  "stack": ["Python", "Pandas", "NumPy", "Scikit-learn", "DEAP", "Optuna"],
+  "image": "assets/RUL_Optimization.png",
+  "repo": "",
+  "demo": ""
+  },
+  {
+  "title": "Survival analysis of component failures",
+  "description": "This project uses log-rank tests (survival analysis) to evaluate whether time-to-failure differs across user conditions. It tests battery, impact, and IR sensor failure times across carpet score groups (pairwise and threshold splits) and across households with vs. without pets, showing strong evidence that pets and lower carpet scores are associated with different failure behavior for battery and impact sensors, while IR is not significantly affected.",
+  "stack": ["R"],
+  "image": "assets/FM-All-Pets.png",
+  "repo": "",
+  "demo": ""
   }
+  
 ]
