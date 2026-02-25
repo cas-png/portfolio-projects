@@ -3,7 +3,7 @@
     "title": "Competitive sudoku AI",
     "description": "Develop an competitive sudoku AI to compete in tournament with other players. It's build using game theory and has a reinforcement learning technique and (main) MINI-MAX game theory technique.",
     "stack": ["Python"],
-    "image": "assets/competitive-sudoku-ai.png",
+    "image": "assets/Sudoku/sudoku.gif",
     "repo": "https://github.com/cas-png/competitive_sudoku---2AMU10",
     "repoLabel": "GitHub Repository",
     "demo": ""
@@ -72,5 +72,13 @@
     ],
     "repo": "",
     "demo": ""
-  }
+  },
+  {
+  "title": "Policy Document Intelligence Tool",
+  "description": "This consultancy project develops an NLP-based tool to help analysts process complex policy documents more efficiently. It combines rule-based extraction, interactive highlighting, and a learning component (logistic regression) to suggest relevant text. The system supports personalized recommendations, PDF parsing, and user feedback, with future improvements including advanced models, sentence embeddings, and active learning for continuous performance enhancement.",
+  "stack": ["Python", "Django", "spaCy", "scikit-learn", "PyMuPDF", "JavaScript"],
+  "image": "assets/PolicyIQ/Highlight.png",
+  "repo": "https://github.com/DataShinobiX/BlueRiq",
+  "demo": ""
+ }
 ]
