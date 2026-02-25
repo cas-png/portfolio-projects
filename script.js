@@ -2,7 +2,7 @@
   const container = document.getElementById("projects");
 
   try {
-    const response = await fetch("projects.json", { cache: "no-store" });
+    const response = await fetch(`projects.json?v=${Date.now()}`, { cache: "no-store" });
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}`);
     }
@@ -86,16 +86,24 @@
 }
 
 function normalizeProjectImages(project) {
+  const cleanPath = (value) => {
+    if (typeof value !== "string") {
+      return "";
+    }
+    const normalized = value.trim().replace(/\\/g, "/");
+    return normalized ? encodeURI(normalized) : "";
+  };
+
   if (Array.isArray(project.images)) {
-    return project.images.filter((img) => typeof img === "string" && img.trim() !== "");
+    return project.images.map(cleanPath).filter((img) => img !== "");
   }
 
   if (Array.isArray(project.image)) {
-    return project.image.filter((img) => typeof img === "string" && img.trim() !== "");
+    return project.image.map(cleanPath).filter((img) => img !== "");
   }
 
   if (typeof project.image === "string" && project.image.trim() !== "") {
-    return [project.image.trim()];
+    return [cleanPath(project.image)];
   }
 
   return [];

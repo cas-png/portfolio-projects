@@ -34,41 +34,43 @@
     "demo": ""
   },
   {
-  "title": "Aircraft RUL Prediction & Maintenance Optimization",
-  "description": "This TU/e course project predicts aircraft engine Remaining Useful Lifetime (RUL) using a Random Forest model with engineered time-based features, and optimizes maintenance scheduling with a Genetic Algorithm. The approach combines data preprocessing, feature engineering, and hyperparameter tuning with DEAP and Optuna to minimize maintenance penalties under operational constraints.",
-  "stack": ["Python", "Pandas", "NumPy", "Scikit-learn", "DEAP", "Optuna"],
-  "image": "assets/RUL_Optimization.png",
-  "repo": "",
-  "demo": ""
+    "title": "Aircraft RUL Prediction & Maintenance Optimization",
+    "description": "This TU/e course project predicts aircraft engine Remaining Useful Lifetime (RUL) using a Random Forest model with engineered time-based features, and optimizes maintenance scheduling with a Genetic Algorithm. The approach combines data preprocessing, feature engineering, and hyperparameter tuning with DEAP and Optuna to minimize maintenance penalties under operational constraints.",
+    "stack": ["Python", "Pandas", "NumPy", "Scikit-learn", "DEAP", "Optuna"],
+    "image": "assets/RUL_optimization.png",
+    "repo": "",
+    "demo": ""
   },
   {
-  "title": "Survival analysis of component failures",
-  "description": "This project uses log-rank tests (survival analysis) to evaluate whether time-to-failure differs across user conditions. It tests battery, impact, and IR sensor failure times across carpet score groups (pairwise and threshold splits) and across households with vs. without pets, showing strong evidence that pets and lower carpet scores are associated with different failure behavior for battery and impact sensors, while IR is not significantly affected.",
-  "stack": ["R"],
-  "image": "assets/FM-All-Pets.png",
-  "repo": "",
-  "demo": ""
+    "title": "Survival analysis of component failures",
+    "description": "This project uses log-rank tests (survival analysis) to evaluate whether time-to-failure differs across user conditions. It tests battery, impact, and IR sensor failure times across carpet score groups (pairwise and threshold splits) and across households with vs. without pets, showing strong evidence that pets and lower carpet scores are associated with different failure behavior for battery and impact sensors, while IR is not significantly affected.",
+    "stack": ["R"],
+    "image": "assets/FM-All-Pets.png",
+    "repo": "",
+    "demo": ""
   },
   {
-  "title": "Ticket Sales & Marketing Analytics Pipeline",
-  "description": "This project analyzes theater ticket sales and social media performance using batch processing pipelines. It combines Spark-based data engineering with interactive dashboards to explore regional performance, demographic accessibility, and the relationship between weekly marketing engagement and ticket sales, enabling insights into occupancy trends and campaign effectiveness.",
-  "stack": ["Python", "Apache Spark", "Google Cloud Storage", "BigQuery", "Looker Studio"],
-  "image": ["assets/Batch Pipelines.png",
-            "assets/DashboardDataEngineering.png",
-            "assets/DashboardDataEngineeringVis.png"
-           ],
-  "repo": "",
-  "demo": ""
+    "title": "Ticket Sales & Marketing Analytics Pipeline",
+    "description": "This project analyzes theater ticket sales and social media performance using batch processing pipelines. It combines Spark-based data engineering with interactive dashboards to explore regional performance, demographic accessibility, and the relationship between weekly marketing engagement and ticket sales, enabling insights into occupancy trends and campaign effectiveness.",
+    "stack": ["Python", "Apache Spark", "Google Cloud Storage", "BigQuery", "Looker Studio"],
+    "images": [
+      "assets/Batch Pipelines.png",
+      "assets/DashboardDataEngineering.png",
+      "assets/DashboardDataEngineeringVis.png"
+    ],
+    "repo": "",
+    "demo": ""
   },
   {
-  "title": "Ticket Sales Forecasting MLOps Pipeline",
-  "description": "This project develops a scalable MLOps system to forecast ticket sales per venue. It combines feature engineering and models like XGBoost and HistGradientBoosting with an automated pipeline for training, evaluation, and deployment. A web-based UI allows non-technical users to visualize historical sales and forecasts, enabling early-stage decision-making and performance monitoring.",
-  "stack": ["Python", "XGBoost", "Scikit-learn", "Flask", "Docker", "Google Cloud", "Vertex AI"],
-  "image": ["assets/DEUI.png",
-            "assets/Forecaster.png",
-            "assets/pipelineDE.png"],
-  "repo": "",
-  "demo": ""
+    "title": "Ticket Sales Forecasting MLOps Pipeline",
+    "description": "This project develops a scalable MLOps system to forecast ticket sales per venue. It combines feature engineering and models like XGBoost and HistGradientBoosting with an automated pipeline for training, evaluation, and deployment. A web-based UI allows non-technical users to visualize historical sales and forecasts, enabling early-stage decision-making and performance monitoring.",
+    "stack": ["Python", "XGBoost", "Scikit-learn", "Flask", "Docker", "Google Cloud", "Vertex AI"],
+    "images": [
+      "assets/DEUI.PNG",
+      "assets/Forecaster.PNG",
+      "assets/pipelineDE.png"
+    ],
+    "repo": "",
+    "demo": ""
   }
-  
 ]
