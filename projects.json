@@ -48,6 +48,27 @@
   "image": "assets/FM-All-Pets.png",
   "repo": "",
   "demo": ""
+  },
+  {
+  "title": "Ticket Sales & Marketing Analytics Pipeline",
+  "description": "This project analyzes theater ticket sales and social media performance using batch processing pipelines. It combines Spark-based data engineering with interactive dashboards to explore regional performance, demographic accessibility, and the relationship between weekly marketing engagement and ticket sales, enabling insights into occupancy trends and campaign effectiveness.",
+  "stack": ["Python", "Apache Spark", "Google Cloud Storage", "BigQuery", "Looker Studio"],
+  "image": ["assets/Batch Pipelines.png",
+            "assets/DashboardDataEngineering.png",
+            "assets/DashboardDataEngineeringVis.png"
+           ],
+  "repo": "",
+  "demo": ""
+  },
+  {
+  "title": "Ticket Sales Forecasting MLOps Pipeline",
+  "description": "This project develops a scalable MLOps system to forecast ticket sales per venue. It combines feature engineering and models like XGBoost and HistGradientBoosting with an automated pipeline for training, evaluation, and deployment. A web-based UI allows non-technical users to visualize historical sales and forecasts, enabling early-stage decision-making and performance monitoring.",
+  "stack": ["Python", "XGBoost", "Scikit-learn", "Flask", "Docker", "Google Cloud", "Vertex AI"],
+  "image": ["assets/DEUI.png",
+            "assets/Forecaster.png",
+            "assets/pipelineDE.png"],
+  "repo": "",
+  "demo": ""
   }
   
 ]

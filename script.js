@@ -15,12 +15,17 @@
 
     container.innerHTML = projects
       .map((project, idx) => {
-        const hasImage = Boolean(project.image);
-        const imageSrc = hasImage ? project.image : "assets/placeholder.svg";
+        const galleryImages = normalizeProjectImages(project);
+        const hasImage = galleryImages.length > 0;
+        const imageSrc = hasImage ? galleryImages[0] : "assets/placeholder.svg";
         const imageAlt = `${project.title || "Project"} preview`;
+        const extraImages = galleryImages.length > 1
+          ? `<span class=\"image-count\">+${galleryImages.length - 1}</span>`
+          : "";
+
         const imageMarkup = hasImage
           ? `
-            <button class=\"card-image image-trigger\" type=\"button\" data-image=\"${imageSrc}\" data-alt=\"${imageAlt}\" aria-label=\"Open larger image for ${project.title || "project"}\">
+            <button class=\"card-image image-trigger\" type=\"button\" data-project-index=\"${idx}\" aria-label=\"Open image gallery for ${project.title || "project"}\">
               <img
                 src=\"${imageSrc}\"
                 alt=\"${imageAlt}\"
@@ -28,6 +33,7 @@
                 decoding=\"async\"
                 onerror=\"this.onerror=null;this.src='assets/placeholder.svg';this.parentElement.classList.add('is-placeholder');\"
               />
+              ${extraImages}
             </button>
           `
           : `
@@ -72,24 +78,64 @@
       })
       .join("");
 
-    setupImageModal(container);
+    setupImageModal(container, projects);
   } catch (error) {
     container.innerHTML = "<p>Could not load projects. Check <code>projects.json</code>.</p>";
     console.error(error);
   }
 }
 
-function setupImageModal(projectsContainer) {
+function normalizeProjectImages(project) {
+  if (Array.isArray(project.images)) {
+    return project.images.filter((img) => typeof img === "string" && img.trim() !== "");
+  }
+
+  if (Array.isArray(project.image)) {
+    return project.image.filter((img) => typeof img === "string" && img.trim() !== "");
+  }
+
+  if (typeof project.image === "string" && project.image.trim() !== "") {
+    return [project.image.trim()];
+  }
+
+  return [];
+}
+
+function setupImageModal(projectsContainer, projects) {
   const modal = document.getElementById("image-modal");
   const modalImage = document.getElementById("modal-image");
   const modalClose = document.getElementById("modal-close");
-  if (!modal || !modalImage || !modalClose) {
+  const modalPrev = document.getElementById("modal-prev");
+  const modalNext = document.getElementById("modal-next");
+  const modalCounter = document.getElementById("modal-counter");
+
+  if (!modal || !modalImage || !modalClose || !modalPrev || !modalNext || !modalCounter) {
     return;
   }
 
-  const openModal = (src, alt) => {
+  const state = {
+    images: [],
+    index: 0,
+    title: "Project image"
+  };
+
+  const renderModalImage = () => {
+    const src = state.images[state.index] || "assets/placeholder.svg";
     modalImage.src = src;
-    modalImage.alt = alt;
+    modalImage.alt = `${state.title} (${state.index + 1}/${state.images.length})`;
+    modalCounter.textContent = `${state.index + 1} / ${state.images.length}`;
+
+    const showNav = state.images.length > 1;
+    modalPrev.classList.toggle("is-hidden", !showNav);
+    modalNext.classList.toggle("is-hidden", !showNav);
+  };
+
+  const openModal = (images, startIndex, title) => {
+    state.images = images.length > 0 ? images : ["assets/placeholder.svg"];
+    state.index = Math.min(Math.max(startIndex, 0), state.images.length - 1);
+    state.title = title || "Project image";
+    renderModalImage();
+
     modal.classList.add("is-open");
     modal.setAttribute("aria-hidden", "false");
     document.body.classList.add("modal-open");
@@ -102,16 +148,38 @@ function setupImageModal(projectsContainer) {
     modalImage.src = "";
   };
 
+  const showPrevious = () => {
+    if (state.images.length < 2) {
+      return;
+    }
+    state.index = (state.index - 1 + state.images.length) % state.images.length;
+    renderModalImage();
+  };
+
+  const showNext = () => {
+    if (state.images.length < 2) {
+      return;
+    }
+    state.index = (state.index + 1) % state.images.length;
+    renderModalImage();
+  };
+
   projectsContainer.addEventListener("click", (event) => {
     const trigger = event.target.closest(".image-trigger");
     if (!trigger) {
       return;
     }
 
-    openModal(trigger.dataset.image, trigger.dataset.alt || "Project image");
+    const projectIndex = Number(trigger.dataset.projectIndex);
+    const project = projects[projectIndex] || {};
+    const images = normalizeProjectImages(project);
+    openModal(images, 0, project.title || "Project image");
   });
 
   modalClose.addEventListener("click", closeModal);
+  modalPrev.addEventListener("click", showPrevious);
+  modalNext.addEventListener("click", showNext);
+
   modal.addEventListener("click", (event) => {
     if (event.target === modal) {
       closeModal();
@@ -119,9 +187,21 @@ function setupImageModal(projectsContainer) {
   });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && modal.classList.contains("is-open")) {
-      closeModal();
+    if (!modal.classList.contains("is-open")) {
+      return;
     }
+
+    if (event.key === "Escape") {
+      closeModal();
+    } else if (event.key === "ArrowLeft") {
+      showPrevious();
+    } else if (event.key === "ArrowRight") {
+      showNext();
+    }
+  });
+
+  modalImage.addEventListener("error", () => {
+    modalImage.src = "assets/placeholder.svg";
   });
 }
 

@@ -109,6 +109,7 @@ h1 {
   margin-bottom: 0.85rem;
   border: 0;
   padding: 0;
+  position: relative;
 }
 
 .image-trigger {
@@ -121,6 +122,18 @@ h1 {
 
 .image-trigger:hover img {
   transform: scale(1.03);
+}
+
+.image-count {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.45rem;
+  background: #111111c9;
+  color: #fff;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  padding: 0.2rem 0.5rem;
 }
 
 .card-image img {
@@ -197,16 +210,14 @@ h1 {
 }
 
 .image-modal img {
-  max-width: min(1200px, 95vw);
-  max-height: 88vh;
+  max-width: min(1200px, 90vw);
+  max-height: 82vh;
   border-radius: 12px;
   box-shadow: 0 20px 40px #00000080;
 }
 
-.modal-close {
-  position: fixed;
-  top: 0.8rem;
-  right: 0.9rem;
+.modal-close,
+.modal-nav {
   border: 1px solid #ffffff66;
   background: #111111cc;
   color: #fff;
@@ -218,9 +229,62 @@ h1 {
   cursor: pointer;
 }
 
+.modal-close {
+  position: fixed;
+  top: 0.8rem;
+  right: 0.9rem;
+}
+
+.modal-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#modal-prev {
+  left: 1rem;
+}
+
+#modal-next {
+  right: 1rem;
+}
+
+.modal-counter {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  color: #fff;
+  background: #111111cc;
+  border: 1px solid #ffffff2f;
+  border-radius: 999px;
+  padding: 0.25rem 0.65rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.78rem;
+}
+
+.is-hidden {
+  display: none;
+}
+
 @media (max-width: 560px) {
   .card {
     padding: 0.75rem;
+  }
+
+  .modal-nav {
+    top: auto;
+    bottom: 1rem;
+    transform: none;
+  }
+
+  #modal-prev {
+    left: 1rem;
+  }
+
+  #modal-next {
+    right: 1rem;
   }
 }
 
